@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS facility_db;
+CREATE DATABASE facility_db;
