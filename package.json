@@ -1,0 +1,31 @@
+{
+  "name": "facility_management",
+  "version": "1.0.0",
+  "description": "The managers are given oversight and are able move employees to different departments, floors, and office locations as needed, and can see how much space is left or needed.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DN-Vanguard/Facility_Management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DN-Vanguard/Facility_Management/issues"
+  },
+  "homepage": "https://github.com/DN-Vanguard/Facility_Management#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
+}
