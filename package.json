@@ -1,7 +1,7 @@
 {
-  "name": "Project-2",
+  "name": "facility_management",
   "version": "1.0.0",
-  "description": "",
+  "description": "The managers are given oversight and are able move employees to different departments, floors, and office locations as needed, and can see how much space is left or needed.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DN-Vanguard/Project-2.git"
+    "url": "git+https://github.com/DN-Vanguard/Facility_Management.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DN-Vanguard/Project-2/issues"
+    "url": "https://github.com/DN-Vanguard/Facility_Management/issues"
   },
-  "homepage": "https://github.com/DN-Vanguard/Project-2#readme",
+  "homepage": "https://github.com/DN-Vanguard/Facility_Management#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
