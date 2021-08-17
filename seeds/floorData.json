@@ -1,0 +1,54 @@
+[
+    {
+        "floor_level": 1,
+        "building_id": 1
+    },
+    {
+        "floor_level": 2,
+        "building_id": 1
+    },
+    {
+        "floor_level": 3,
+        "building_id": 1
+    },
+    {
+        "floor_level": 4,
+        "building_id": 1
+    },
+    {
+        "floor_level": 1,
+        "building_id": 2
+    },
+    {
+        "floor_level": 2,
+        "building_id": 2
+    },
+    {
+        "floor_level": 3,
+        "building_id": 2
+    },
+    {
+        "floor_level": 1,
+        "building_id": 3
+    },
+    {
+        "floor_level": 2,
+        "building_id": 3
+    },
+    {
+        "floor_level": 3,
+        "building_id": 3
+    },
+    {
+        "floor_level": 4,
+        "building_id": 3
+    },
+    {
+        "floor_level": 5,
+        "building_id": 3
+    },
+    {
+        "floor_level": 6,
+        "building_id": 3
+    }
+]

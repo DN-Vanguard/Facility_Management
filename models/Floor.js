@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Floor extends Model {}
+class Floor extends Model { }
 
 Floor.init(
     {

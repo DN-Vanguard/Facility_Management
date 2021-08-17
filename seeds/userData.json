@@ -1,17 +1,17 @@
 [
   {
-    "name": "Sal",
-    "email": "sal@hotmail.com",
-    "password": "password12345"
+    "name": "Admin",
+    "email": "admin@contoso.com",
+    "password": "admin"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "name": "Backup",
+    "email": "admbkup@contoso.com",
+    "password": "backup"
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "name": "God",
+    "email": "gm@contoso.com",
+    "password": "godmodeftw"
   }
 ]

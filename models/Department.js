@@ -8,10 +8,10 @@ Department.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primarykey: true,
-            autoIncrement: true
+            primaryKey: true,
+            autoIncrement: true,
         },
-        Department_name: {
+        department_name: {
             type: DataTypes.STRING,
             allowNull: false,
         }

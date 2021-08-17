@@ -1,0 +1,37 @@
+[
+    {
+         "seat_number": 1,
+         "department_id": 1,
+         "employee_id": 1,
+         "floor_id": 1
+         
+     },
+     {
+        "seat_number": 2,
+        "department_id": 2,
+        "employee_id": 2,
+        "floor_id": 2
+        
+    },
+    {
+        "seat_number": 3,
+        "department_id": 3,
+        "employee_id": 3,
+        "floor_id": 3
+        
+    },
+    {
+        "seat_number": 4,
+        "department_id": 4,
+        "employee_id": 4,
+        "floor_id": 4
+        
+    },
+    {
+        "seat_number": 5,
+        "department_id": 5,
+        "employee_id": 5,
+        "floor_id": 5
+        
+    }
+ ]

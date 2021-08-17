@@ -11,7 +11,7 @@ Building.init(
             primaryKey: true,
             autoIncrement: true
         },
-        buidling_name: {
+        building_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -22,6 +22,13 @@ Building.init(
         building_zip: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        facility_mgr_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            }
         }
     },
     {
