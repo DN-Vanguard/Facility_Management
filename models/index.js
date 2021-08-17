@@ -5,6 +5,14 @@ const Space = require('./Space');
 const Department = require('./Department');
 const Employee = require('./Employee');
 
+Building.belongsTo(User, {
+  foreignKey: 'facility_mgr_id',
+})
+
+User.hasMany(Building, {
+  foreignKey: 'facility_mgr_id',
+})
+
 Floor.belongsTo(Building, {
   foreignKey: 'building_id',
 });
@@ -38,7 +46,7 @@ Space.belongsTo(Employee, {
 
 Employee.hasOne(Space, {
   foreignKey: 'employee_id',
-
+  onDelete: 'SET NULL',
 });
 
 module.exports = { User, Building, Floor, Space, Department, Employee };

@@ -1,0 +1,35 @@
+[
+    {
+        "department_name": "Executive's Office"
+    },
+    {
+        "department_name": "Accounting"
+    },
+    {
+        "department_name": "Finance"
+    },
+    {
+        "department_name": "Operation"
+    },
+    {
+        "department_name": "Sales"
+    },
+    {
+        "department_name": "Research"
+    },
+    {
+        "department_name": "Engineering"
+    },
+    {
+        "department_name": "Marketing"
+    },
+    {
+        "department_name": "Facility"
+    },
+    {
+        "department_name": "Support"
+    },
+    {
+        "department_name": "Human Resource"
+    }
+]
