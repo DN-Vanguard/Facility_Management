@@ -5,33 +5,42 @@ const Space = require('./Space');
 const Department = require('./Department');
 const Employee = require('./Employee');
 
-Building.belongsTo(User, {
-  foreignKey: 'facility_mgr_id',
-})
-
 User.hasMany(Building, {
   foreignKey: 'facility_mgr_id',
-})
+  onDelete: 'SET NULL',
+});
+
+Building.belongsTo(User, {
+  foreignKey: 'facility_mgr_id',
+});
+
+Building.hasMany(Floor, {
+  foreignKey: 'building_id',
+  onDelete: 'CASCADE'
+});
 
 Floor.belongsTo(Building, {
   foreignKey: 'building_id',
 });
 
-Building.hasMany(Floor, {
-  foreignKey: 'building_id',
-  onDelete: 'CASCADE',
-});
-
-Space.belongsTo(Floor,{
+Floor.hasMany(Space, {
   foreignKey: 'floor_id',
 });
 
-Floor.hasMany(Space,{
-  foreignKey: 'floor_id',
+Space.belongsTo(Floor, {
+  foreignKey: 'space_id',
   onDelete: 'CASCADE',
 });
 
 Space.belongsTo(Department, {
+  foreignKey: 'department_id',
+});
+
+Space.belongsTo(Employee, {
+  foreignKey: 'employee_id',
+});
+
+Department.hasMany(Employee, {
   foreignKey: 'department_id',
 });
 
@@ -40,13 +49,12 @@ Department.hasMany(Space, {
   onDelete: 'SET NULL',
 });
 
-Space.belongsTo(Employee, {
+Employee.hasOne(Space, {
   foreignKey: 'employee_id',
 });
 
-Employee.hasOne(Space, {
-  foreignKey: 'employee_id',
-  onDelete: 'SET NULL',
+Employee.belongsTo(Department, {
+  foreignKey: 'department_id',
 });
 
 module.exports = { User, Building, Floor, Space, Department, Employee };
