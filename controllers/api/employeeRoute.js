@@ -6,13 +6,7 @@ const withAuth = require('../../utils/auth');
 // GET
 router.get('/', async (req, res) => {
     try {
-        const employeeData = await Employee.findAll(
-            {
-            include: [
-                { model: Space, through: {attributes: []} },
-            ]
-            }
-        );
+        const employeeData = await Employee.findAll();
         console.log('\n DISPLAYING ALL EMPLOYEES \n');
         res.status(200).json(employeeData);
     }

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Space, Department, Floor } = require('../../models');
+const { Space, Department, Floor, Building } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //GET
@@ -9,11 +9,10 @@ router.get('/', async (req, res) => {
       include: [
           { model: Department, attributes: ['department_name'] },
           { model: Floor, attributes: ["floor_level"] },
-          { model: Space, attributes: ["seat_number"] }
       ]
   });
     console.log('\n DISPLAYING ALL SPACES \n');
-    res.status(200).json(SpaceData);
+    res.status(200).json(spaceData);
   }
   catch (err) {
     res.status(500).json(err);
