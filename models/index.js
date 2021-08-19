@@ -28,7 +28,7 @@ Floor.hasMany(Space, {
 });
 
 Space.belongsTo(Floor, {
-  foreignKey: 'space_id',
+  foreignKey: 'floor_id',
   onDelete: 'CASCADE',
 });
 

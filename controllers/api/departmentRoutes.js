@@ -3,8 +3,22 @@ const { Department } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
+// GET
+router.get('/', async (req, res) => {
+  try {
+      const departmentData = await Department.findAll();
+      console.log('\n DISPLAYING ALL DEPARTMENTS \n');
+      res.status(200).json(departmentData);
+  }
+  catch (err) {
+      res.status(500).json(err);
+      if (err) {
+          console.error(err);
+      }
+  }
+});
 
-
+// POST
 router.post('/', async (req, res) => {
     try {
       const newDepartment = await Department.create({
@@ -19,6 +33,7 @@ router.post('/', async (req, res) => {
     }
   });
 
+  // DELETE
   router.delete('/:id', async (req, res) => {
     try {
       const departmentData = await Department.destroy({
