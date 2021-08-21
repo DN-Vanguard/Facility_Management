@@ -3,9 +3,9 @@ const { Space, Department, Floor, Building } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //GET
-router.get('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
-    const spaceData = await Space.findAll({
+    const newPost = await Post.create({
       include: [
           { model: Department, attributes: ['department_name'] },
           { model: Floor, attributes: ["floor_level"] },
@@ -23,11 +23,11 @@ router.get('/', async (req, res) => {
 });
 
 //POST
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newSpace = await Space.create({
       ...req.body,
-      user_id: req.session.user_id,
+      
     });
 
     res.status(200).json(newSpace);
