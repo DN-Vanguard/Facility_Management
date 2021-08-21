@@ -23,11 +23,10 @@ router.get('/', async (req, res) => {
 });
 
 //POST
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newSpace = await Space.create({
       ...req.body,
-      user_id: req.session.user_id,
     });
 
     res.status(200).json(newSpace);
