@@ -14,18 +14,22 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
+            {{#if logged_in}}
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="d-flex justify-content-between align-items-center">
+            {{/if}}
+            <div class="d-flex justify-content-between align-items-center" style="width: 89%;">
                 <a class="navbar-brand h1 me-5" href="#">Facility Management</a>
+                {{#if logged_in}}
                 <div class="mx-2">
-                    <h6>Welcome [user_first_name]</h6>
-                    <h6>[current_time]</h6>
+                    <h6>Welcome {{name}}</h6>
+                    {{!-- <h6>{{date}}</h6> --}}
                 </div>
+                {{/if}}
             </div>
-
+            
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -35,6 +39,7 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        {{#if logged_in}}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -50,13 +55,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">User Management</a>
                         </li>
-                        {{#if logged_in}}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Logout</a>
+                            <button class="nav-link btn btn-link" id="logout">Logout</button>
                         </li>
                         {{else}}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link active" aria-current="page" href="/login">Login</a>
                         </li>
                         {{/if}}
                     </ul>
@@ -64,7 +68,11 @@
             </div>
         </div>
     </nav>
+    
+    <div style="height: 20px;">
 
+    </div>
+    
     <main>
         {{{ body }}}
     </main>
