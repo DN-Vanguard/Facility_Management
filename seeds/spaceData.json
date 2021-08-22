@@ -33,5 +33,12 @@
         "employee_id": 5,
         "floor_id": 5
         
+    },
+    {
+        "seat_number": 6,
+        "department_id": 6,
+        "employee_id": 6,
+        "floor_id": 6
+        
     }
  ]

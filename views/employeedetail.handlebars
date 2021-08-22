@@ -1,31 +1,35 @@
-<div>
-            <h1>EMPLOYEES</h1>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{employee.name}}</h5>
-                <div class="card">EMPLOYEE ID</div>
-                <div class="card">PHONE NUMBER</div>
-                <div class="card">EMAIL</div>
-                <div class="card">SEAT #</div>
-                <div class="card">FLOOR</div>
-                <div class="card">BUILDING</div>
-              </div>
+<div class=" w-50 mx-auto">
+            <div>
+                <h2>Employee Details</h2>
             </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{department.name}}</h5>
-                <div class="card">000</div>
-                <div class="card">000-000-0000</div>
-                <div class="card">@GMAIL.COM</div>
-                <div class="card">1</div>
-                <div class="card">1</div>
-                <div class="card">ABC</div>
-              </div>
+            <div class="my-5 d-grid gap-3 shadow rounded-3 p-5">
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3 text-primary" style="width: 45%;">{{employee.first_name}} {{employee.last_name}}</div>
+                    <div class="text-start h3 text-primary" style="width: 45%;">{{department.department_name}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Employee ID</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{employee.id}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Phone Number</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{employee.phone_number}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Email</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{employee.email}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Seat Number</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{seat_number}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Floor</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{floor.floor_level}}</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="text-start h3" style="width: 45%;">Building</div>
+                    <div class="text-start" style="width: 45%; font-size: x-large;">{{building_name}}</div>
+                </div>
             </div>
-          </div>
         </div>
