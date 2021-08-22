@@ -1,30 +1,13 @@
-<div class="card">
-            <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                        <h2>{{employee_first}}</h2>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">EMPLOYEE ID</li>
-                      <li class="list-group-item">PHONE NUMBER</li>
-                      <li class="list-group-item">EMAIL</li>
-                      <li class="list-group-item">SEAT #</li>
-                      <li class="list-group-item">FLOOR</li>
-                      <li class="list-group-item">BUILDING</li>
-                    </ul>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                        <h2>ACCOUNTING</h2>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">000</li>
-                        <li class="list-group-item">000-000-0000</li>
-                        <li class="list-group-item">@GMAIL.COM</li>
-                        <li class="list-group-item">1</li>
-                        <li class="list-group-item">1</li>
-                        <li class="list-group-item">ABC</li>
-                    </ul>
-             
-                </div>
-        </div>
+<div class="w-50 mx-auto">
+    <div>
+        <h2>{{department.department_name}}</h2>
+    </div>
+    <div class="d-flex flex-column my-5 d-grid gap-2">
+        {{#each employees as |employee|}}
+            <a class="btn btn-outline-primary btn-lg d-flex justify-content-between" href="/employee-detail/{{employee.id}}">
+                <div class="h3 m-0">{{employee.first_name}} {{employee.last_name}}</div>
+                <div class="h3 text-start m-0" style="width: 35%;">Employee ID: {{employee.id}}</div>
+            </a>
+        {{/each}}
+    </div>
+</div>

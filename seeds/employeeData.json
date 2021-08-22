@@ -2,33 +2,46 @@
     {
         "first_name": "Tom",
         "last_name": "Hanks",
-        "department_id": 1
+        "department_id": 1,
+        "phone_number": "555-111-1111",
+        "email": "th@contoso.com"
     },
     {
         "first_name": "James",
         "last_name": "Cloherty",
-        "department_id": 2
+        "department_id": 2,
+        "phone_number": "555-111-2222",
+        "email": "jc@contoso.com"
+
     },
     {
         "first_name": "Demi",
         "last_name": "Wright",
-        "department_id": 3
+        "department_id": 3,
+        "phone_number": "555-111-3333",
+        "email": "dw@contoso.com"
     },
     {
         "first_name": "Brook",
         "last_name": "Smone",
-        "department_id": 4
+        "department_id": 4,
+        "phone_number": "555-111-4444",
+        "email": "bs@contoso.com"
     },
     {
         "first_name": "Homer",
         "last_name": "Simposon",
-        "department_id": 5
+        "department_id": 5,
+        "phone_number": "555-111-5555",
+        "email": "hs@contoso.com"
     },
 
     {
         "first_name": "Theresa",
         "last_name": "Bridge",
-        "department_id": 6
+        "department_id": 6,
+        "phone_number": "555-111-6666",
+        "email": "tb@contoso.com"
     }
    
 ]

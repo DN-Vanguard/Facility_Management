@@ -4,19 +4,19 @@ const withAuth = require('../../utils/auth');
 
 
 // GET
-router.get('/', async (req, res) => {
-    try {
-        const employeeData = await Employee.findAll();
-        console.log('\n DISPLAYING ALL EMPLOYEES \n');
-        res.status(200).json(employeeData);
-    }
-    catch (err) {
-        res.status(500).json(err);
-        if (err) {
-            console.error(err);
-        }
-    }
-});
+// router.get('/', async (req, res) => {
+//     try {
+//         const employeeData = await Employee.findAll();
+//         console.log('\n DISPLAYING ALL EMPLOYEES \n');
+//         res.status(200).json(employeeData);
+//     }
+//     catch (err) {
+//         res.status(500).json(err);
+//         if (err) {
+//             console.error(err);
+//         }
+//     }
+// });
 
 // POST
 router.post('/', async (req, res) => {
