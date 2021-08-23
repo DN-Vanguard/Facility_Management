@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-    console.log(userData);
+    // console.log(userData);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Update User info.
+// UPDATE USER INFO
 router.put("/:id", withAuth, async (req, res) => {
   try {
       const userData = await User.update(req.body, {
@@ -69,7 +69,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 })
 
-// Delete User Info.
+// DELETE USER
 router.delete("/:id", withAuth, async (req, res) => {
   try {
       const userData = await User.destroy({
@@ -86,6 +86,19 @@ router.delete("/:id", withAuth, async (req, res) => {
       res.status(200).json(userData);
   } catch (err) {
       res.status(500).json(err);
+  }
+});
+
+// Inside Job.
+router.post('/insidejob', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+    res.status(200).json(userData);
+  } catch (err) {
+    if (err) {
+      console.error(err);
+      res.status(400).json(err);
+    }
   }
 });
 

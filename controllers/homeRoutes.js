@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Building, Department, Employee, Floor, Space } = require('../models');
 const withAuth = require('../utils/auth');
 
-// HOME ROUTE
+//HOMEPAGE
 // Use withAuth middleware to prevent access to route
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-// Home route to Employee List.
+//EMPLOYEE LIST
 router.get('/employees', withAuth, async (req, res) => {
   try {
     const employeeData = await Employee.findAll({
@@ -37,7 +37,7 @@ router.get('/employees', withAuth, async (req, res) => {
     const employees = employeeData.map((emp) => emp.get({ plain: true }));
 
     // DEBUG: To see what is in [employees].
-    console.log(employees);
+    //console.log(employees);
 
     res.render('employeelist', {
       employees,
@@ -52,7 +52,7 @@ router.get('/employees', withAuth, async (req, res) => {
   }
 });
 
-// Home route to Employee Detail. Will get Space content
+//EMPLOYEE DETAIL
 router.get('/employee-detail/:id', withAuth, async (req, res) => {
   try {
     const employeeDetailData = await Space.findOne({
@@ -68,7 +68,7 @@ router.get('/employee-detail/:id', withAuth, async (req, res) => {
     const employeeDetail = employeeDetailData.get({ plain: true });
 
     // DEBUG: To see what is in [employees].
-    console.log(employeeDetail);
+    //console.log(employeeDetail);
 
     const buildingData = await Building.findByPk(employeeDetail.floor.building_id)
 
@@ -96,7 +96,51 @@ router.get('/employee-detail/:id', withAuth, async (req, res) => {
   }
 });
 
-// Home route to Department List.
+//EDIT EMPLOYEE DETAILS
+router.get('/employee-editor/:id', withAuth, async (req, res) => {
+  try {
+    const employeeDetailData = await Space.findOne({
+      where: { employee_id: req.params.id }, include: [{
+        model: Employee
+      }, {
+        model: Department
+      }, {
+        model: Floor
+      }]
+    })
+
+    const employeeDetail = employeeDetailData.get({ plain: true });
+
+    // DEBUG: To see what is in [employees].
+    // console.log(employeeDetail);
+
+    const buildingData = await Building.findByPk(employeeDetail.floor.building_id)
+
+    const building = buildingData.get({ plain: true });
+
+    // DEBUG: To see what is in [employees].
+    // console.log({
+    //   ...employeeDetail,
+    //   ...building,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
+
+    res.render('employeedetailedit', {
+      ...employeeDetail,
+      ...building,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    if (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  }
+});
+
+//DEPARTMENT LIST
 router.get('/departments', withAuth, async (req, res) => {
   try {
     const departmentData = await Department.findAll();
@@ -104,7 +148,7 @@ router.get('/departments', withAuth, async (req, res) => {
     const departments = departmentData.map((dept) => dept.get({ plain: true }));
 
     // DEBUG: To see what is in [departments].
-    console.log(departments);
+    //console.log(departments);
 
     res.render('departmentlist', {
       departments,
@@ -116,7 +160,7 @@ router.get('/departments', withAuth, async (req, res) => {
   }
 });
 
-// Home route to Department Detail.
+//DEPARTMENT DETAIL
 router.get('/department-detail/:id', withAuth, async (req, res) => {
   try {
     const departmentData = await Department.findByPk(req.params.id);
@@ -126,12 +170,12 @@ router.get('/department-detail/:id', withAuth, async (req, res) => {
     const employees = employeeData.map((emp) => emp.get({ plain: true }));
 
     // DEBUG: To see what is in [renderdata].
-    console.log({
-      department,
-      employees,
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name
-    });
+    // console.log({
+    //   department,
+    //   employees,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
 
     res.render('departmentdetail', {
       department,
@@ -147,7 +191,7 @@ router.get('/department-detail/:id', withAuth, async (req, res) => {
   }
 });
 
-// Home route for Floor List.
+//FLOOR LIST
 router.get('/floors', withAuth, async (req, res) => {
   try {
     const floorData = await Floor.findAll({
@@ -162,11 +206,11 @@ router.get('/floors', withAuth, async (req, res) => {
     const floors = floorData.map((flr) => flr.get({ plain: true }));
 
     // DEBUG: To see what is in [renderdata].
-    console.log({
-      floors,
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name
-    });
+    // console.log({
+    //   floors,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
 
     res.render('floorlist', {
       floors,
@@ -178,7 +222,7 @@ router.get('/floors', withAuth, async (req, res) => {
   }
 });
 
-// Home route for Floor Detail
+//FLOOR DETAILS
 router.get('/floor-detail/:id', withAuth, async (req, res) => {
   try {
     const floorData = await Floor.findByPk(req.params.id, {
@@ -203,12 +247,12 @@ router.get('/floor-detail/:id', withAuth, async (req, res) => {
     const spaceDetail = spaceDetailData.map((spc) => spc.get({ plain: true }));
 
     // DEBUG: To see what is in [renderdata].
-    console.log({
-      spaceDetail,
-      floor,
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name
-    });
+    // console.log({
+    //   spaceDetail,
+    //   floor,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
 
     res.render('floordetail', {
       spaceDetail,
@@ -224,7 +268,7 @@ router.get('/floor-detail/:id', withAuth, async (req, res) => {
   }
 });
 
-// Home route to User List.
+//USER LIST
 router.get('/users', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -234,7 +278,7 @@ router.get('/users', withAuth, async (req, res) => {
     const users = userData.map((user) => user.get({ plain: true }));
 
     // DEBUG: To see what is in [User].
-    console.log(users);
+    // console.log(users);
 
     res.render('userlist', {
       users,
@@ -246,7 +290,7 @@ router.get('/users', withAuth, async (req, res) => {
   }
 });
 
-// Home route to User Sign-Up. (Create New Facility Manager)
+//USER SIGN UP (CLICK USER MANAGEMENT)
 router.get('/add-user', withAuth, async (req, res) => {
   try {
     res.render('signup', {
@@ -258,7 +302,7 @@ router.get('/add-user', withAuth, async (req, res) => {
   }
 });
 
-// User details
+//USER DETAIL
 router.get('/user-detail/:id', withAuth, async (req, res) => {
   try {
     const userDetailData = await User.findByPk(req.params.id, {
@@ -273,12 +317,12 @@ router.get('/user-detail/:id', withAuth, async (req, res) => {
     };
 
     // DEBUG: To see what is in [user].
-    console.log({
-      ...userDetail,
-      renderEdit: isSameUser,
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name
-    });
+    // console.log({
+    //   ...userDetail,
+    //   renderEdit: isSameUser,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
 
     res.render('userdetail', {
       ...userDetail,
@@ -294,7 +338,46 @@ router.get('/user-detail/:id', withAuth, async (req, res) => {
   }
 });
 
-// LOGIN ROUTE
+//EDIT USER DETAILS
+router.get('/user-editor/:id', withAuth, async (req, res) => {
+  try {
+    const userDetailData = await User.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const userDetail = userDetailData.get({ plain: true });
+
+    // DEBUG: To see what is in [user].
+    // console.log({
+    //   ...userDetail,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
+
+    res.render('userdetailedit', {
+      ...userDetail,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    if (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  }
+});
+
+//Initial test user creation.
+router.get('/ocean', async (req, res) => {
+  try {
+    res.render('insidejob', {
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//LOGIN ROUTE
 router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

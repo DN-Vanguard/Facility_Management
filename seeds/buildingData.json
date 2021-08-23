@@ -6,12 +6,12 @@
     },
     {
         "building_name": "B",
-        "building_address": "DEF Street NE, AZ",
+        "building_address": "DEF Street, AZ",
         "building_zip": "67891"
     },
     {
         "building_name": "C",
-        "building_address": "GHI Street NE, TX",
+        "building_address": "GHI Street, TX",
         "building_zip": "11121"
     }
 ]

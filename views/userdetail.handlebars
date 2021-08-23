@@ -3,15 +3,16 @@
         <h2>Facility Manager Detail</h2>
     </div>
 
-    <div class="my-5 d-grid gap-3 shadow-lg rounded-3 p-5">
-        {{#if renderEdit}}
-        <div class="d-flex justify-content-end">
-            <div class="d-flex justify-content-between" style="width: 35%;">
-                <a class="btn btn-primary px-4" href="/user-editor/{{id}}"><i class="bi bi-pencil-square"></i> Edit</a>
-                <button class="btn btn-danger" id="delBtn"><i class="bi bi-trash"></i> Delete</button>
-            </div>
+
+    {{#if renderEdit}}
+    <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between" style="width: 30%;">
+            <a class="btn btn-primary px-4" href="/user-editor/{{id}}"><i class="bi bi-pencil-square"></i> Edit</a>
+            <button class="btn btn-danger" id="delBtn" del-id={{id}}><i class="bi bi-trash"></i> Delete</button>
         </div>
-        {{/if}}
+    </div>
+    {{/if}}
+    <div class="my-5 d-grid gap-3 shadow-lg rounded-3 p-5">
         <div class="text-start h3 text-primary text-center">{{first_name}} {{last_name}}</div>
         <div class="d-flex justify-content-between">
             <div class="text-start h3" style="width: 45%;">Facility Manager ID</div>
@@ -21,5 +22,13 @@
             <div class="text-start h3" style="width: 45%;">Email</div>
             <div class="text-center" style="width: 45%; font-size: x-large;">{{email}}</div>
         </div>
+        <div class="d-flex justify-content-between">
+            <div class="text-start h3" style="width: 45%;">Phone Number</div>
+            <div class="text-center" style="width: 45%; font-size: x-large;">{{phone_number}}</div>
+        </div>
     </div>
 </div>
+
+{{#if renderEdit}}
+<script src="/js/delUser.js"></script>
+{{/if}}
