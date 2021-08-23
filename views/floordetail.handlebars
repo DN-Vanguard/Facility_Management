@@ -1,0 +1,13 @@
+<div class="w-50 mx-auto">
+    <div>
+        <h2>Building {{floor.building.building_name}} - Floor {{floor.floor_level}}</h2>
+    </div>
+    <div class="d-flex flex-column my-5 d-grid gap-2">
+        {{#each spaceDetail as |space|}}
+            <a class="btn btn-outline-primary btn-lg d-flex justify-content-between" href="/employee-detail/{{space.employee_id}}">
+                <div class="h3 m-0">{{space.employee.first_name}} {{space.employee.last_name}}</div>
+                <div class="h3 text-start m-0" style="width: 35%;">{{space.department.department_name}}</div>
+            </a>
+        {{/each}}
+    </div>
+</div>

@@ -12,7 +12,6 @@
         "department_id": 2,
         "phone_number": "555-111-2222",
         "email": "jc@contoso.com"
-
     },
     {
         "first_name": "Demi",
@@ -35,13 +34,189 @@
         "phone_number": "555-111-5555",
         "email": "hs@contoso.com"
     },
-
     {
         "first_name": "Theresa",
         "last_name": "Bridge",
         "department_id": 6,
         "phone_number": "555-111-6666",
         "email": "tb@contoso.com"
+    },
+    {
+        "first_name": "Louis",
+        "last_name": "Vuitton",
+        "department_id": 1,
+        "phone_number": "555-000-0000",
+        "email": "lv@contoso.com"
+    },
+    {
+        "first_name": "Abcde",
+        "last_name": "Gucci",
+        "department_id": 2,
+        "phone_number": "555-111-2222",
+        "email": "ag@contoso.com"
+    },
+    {
+        "first_name": "Talor",
+        "last_name": "Swift",
+        "department_id": 3,
+        "phone_number": "555-111-3333",
+        "email": "ts@contoso.com"
+    },
+    {
+        "first_name": "Keto",
+        "last_name": "Smith",
+        "department_id": 4,
+        "phone_number": "555-111-4444",
+        "email": "ks@contoso.com"
+    },
+    {
+        "first_name": "Jack",
+        "last_name": "Daniels",
+        "department_id": 5,
+        "phone_number": "555-111-5555",
+        "email": "jd@contoso.com"
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Scott",
+        "department_id": 6,
+        "phone_number": "555-111-6666",
+        "email": "ms@contoso.com"
+    },
+    {
+        "first_name": "Post",
+        "last_name": "Malone",
+        "department_id": 1,
+        "phone_number": "555-111-1111",
+        "email": "pm@contoso.com"
+    },
+    {
+        "first_name": "Steve",
+        "last_name": "Jobs",
+        "department_id": 2,
+        "phone_number": "555-111-2222",
+        "email": "sj1@contoso.com"
+    },
+    {
+        "first_name": "Michael",
+        "last_name": "Jordan",
+        "department_id": 3,
+        "phone_number": "555-111-3333",
+        "email": "mj@contoso.com"
+    },
+    {
+        "first_name": "Jim",
+        "last_name": "Halbert",
+        "department_id": 4,
+        "phone_number": "555-111-4444",
+        "email": "jh@contoso.com"
+    },
+    {
+        "first_name": "Kyle",
+        "last_name": "Gale",
+        "department_id": 5,
+        "phone_number": "555-111-5555",
+        "email": "kg@contoso.com"
+    },
+    {
+        "first_name": "Sam",
+        "last_name": "Jackson",
+        "department_id": 6,
+        "phone_number": "555-111-6666",
+        "email": "sj@contoso.com"
+    },
+    {
+        "first_name": "Robert",
+        "last_name": "Junior",
+        "department_id": 1,
+        "phone_number": "555-000-0000",
+        "email": "rj@contoso.com"
+    },
+    {
+        "first_name": "Efghi",
+        "last_name": "Prada",
+        "department_id": 2,
+        "phone_number": "555-111-2222",
+        "email": "ep@contoso.com"
+
+    },
+    {
+        "first_name": "Chuck",
+        "last_name": "Bass",
+        "department_id": 3,
+        "phone_number": "555-111-3333",
+        "email": "cb@contoso.com"
+    },
+    {
+        "first_name": "Bass",
+        "last_name": "Canyon",
+        "department_id": 4,
+        "phone_number": "555-111-4444",
+        "email": "bc@contoso.com"
+    },
+    {
+        "first_name": "Planet",
+        "last_name": "Fitness",
+        "department_id": 5,
+        "phone_number": "555-111-5555",
+        "email": "pf670@contoso.com"
+    },
+    {
+        "first_name": "Dairy",
+        "last_name": "Queen",
+        "department_id": 6,
+        "phone_number": "555-111-6666",
+        "email": "dq@contoso.com"
+    },
+    {
+        "first_name": "Chris",
+        "last_name": "Evans",
+        "department_id": 7,
+        "phone_number": "555-111-6666",
+        "email": "ce@contoso.com"
+    },
+    {
+        "first_name": "Robert Downey",
+        "last_name": "Junior",
+        "department_id": 8,
+        "phone_number": "555-000-0000",
+        "email": "rdj@contoso.com"
+    },
+    {
+        "first_name": "Chris",
+        "last_name": "Hemsworth",
+        "department_id": 9,
+        "phone_number": "555-111-2222",
+        "email": "ch@contoso.com"
+
+    },
+    {
+        "first_name": "Loki",
+        "last_name": "Odinson",
+        "department_id": 10,
+        "phone_number": "555-111-3333",
+        "email": "lo@contoso.com"
+    },
+    {
+        "first_name": "Stephen",
+        "last_name": "Strange",
+        "department_id": 11,
+        "phone_number": "555-111-4444",
+        "email": "ss@contoso.com"
+    },
+    {
+        "first_name": "Du",
+        "last_name": "Ma",
+        "department_id": 4,
+        "phone_number": "555-111-5555",
+        "email": "dm70@contoso.com"
+    },
+    {
+        "first_name": "Orange",
+        "last_name": "Floor",
+        "department_id": 8,
+        "phone_number": "555-111-6666",
+        "email": "of@contoso.com"
     }
    
 ]
