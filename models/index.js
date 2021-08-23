@@ -5,15 +5,7 @@ const Space = require('./Space');
 const Department = require('./Department');
 const Employee = require('./Employee');
 
-User.hasMany(Building, {
-  foreignKey: 'facility_mgr_id',
-  onDelete: 'SET NULL',
-});
-
-Building.belongsTo(User, {
-  foreignKey: 'facility_mgr_id',
-});
-
+// RELATIONSHIPS
 Building.hasMany(Floor, {
   foreignKey: 'building_id',
   onDelete: 'CASCADE'

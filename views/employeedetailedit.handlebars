@@ -1,0 +1,58 @@
+<div class=" w-50 mx-auto">
+    <div>
+        <h2>Edit Employee Details</h2>
+    </div>
+    <div class="my-5 d-grid gap-3 shadow-lg rounded-3 p-5">
+        <form class="form editemployee-form d-grid gap-3 p-5" employee-id={{employee.id}}>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">First Name</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">
+                   <textarea class="form-control text-center" id="fname-employeeedit" rows="1">{{employee.first_name}}</textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Last Name</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">
+                   <textarea class="form-control text-center" id="lname-employeeedit" rows="1">{{employee.last_name}}</textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Department</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">{{department.department_name}}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Employee ID</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">{{employee.id}}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Phone Number</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">
+                    <textarea class="form-control text-center" id="pnumber-employeeedit" rows="1">{{employee.phone_number}}</textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Email</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">
+                    <textarea class="form-control text-center" id="email-employeeedit" rows="1">{{employee.email}}</textarea>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Seat Number</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">{{seat_number}}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Floor</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">{{floor.floor_level}}</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="text-start h3" style="width: 45%;">Building</div>
+                <div class="text-center" style="width: 45%; font-size: x-large;">{{building_name}}</div>
+            </div>
+            <div class="form-group mt-3 mx-auto">
+                <button class="btn btn-primary" type="submit"><i class="bi bi-pencil-square"></i> Update</button>
+                <button class="btn btn-danger" id="delBtn" del-id={{employee.id}}><i class="bi bi-trash"></i> Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/js/employeeEdit.js"></script>

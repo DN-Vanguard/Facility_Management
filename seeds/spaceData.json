@@ -40,5 +40,180 @@
         "employee_id": 6,
         "floor_id": 6
         
+    },
+    {
+        "seat_number": 7,
+        "department_id": 1,
+        "employee_id":7,
+        "floor_id":7
+        
+    },
+    {
+        "seat_number": 8,
+        "department_id": 2,
+        "employee_id": 8,
+        "floor_id": 8
+        
+    },
+    {
+        "seat_number": 9,
+        "department_id": 3,
+        "employee_id": 9,
+        "floor_id": 9
+        
+    },
+    {
+        "seat_number": 10,
+        "department_id": 4,
+        "employee_id": 10,
+        "floor_id": 10
+        
+    },
+    {
+        "seat_number": 11,
+        "department_id": 5,
+        "employee_id": 11,
+        "floor_id": 11
+        
+    },
+    {
+        "seat_number": 12,
+        "department_id": 6,
+        "employee_id": 12,
+        "floor_id": 12
+        
+    },
+    {
+        "seat_number": 13,
+        "department_id": 1,
+        "employee_id": 13,
+        "floor_id": 13
+        
+    },
+    {
+        "seat_number": 14,
+        "department_id": 2,
+        "employee_id": 14,
+        "floor_id": 2
+        
+    },
+    {
+        "seat_number": 15,
+        "department_id": 3,
+        "employee_id": 15,
+        "floor_id": 4
+        
+    },
+    {
+        "seat_number": 16,
+        "department_id": 4,
+        "employee_id": 16,
+        "floor_id": 2
+        
+    },
+    {
+        "seat_number": 17,
+        "department_id": 5,
+        "employee_id": 17,
+        "floor_id": 5
+        
+    },
+    {
+        "seat_number": 18,
+        "department_id": 6,
+        "employee_id": 18,
+        "floor_id": 10
+        
+    },
+    {
+        "seat_number": 19,
+        "department_id": 1,
+        "employee_id": 19,
+        "floor_id": 7
+        
+    },
+    {
+        "seat_number": 20,
+        "department_id": 2,
+        "employee_id": 20,
+        "floor_id": 7
+        
+    },
+    {
+        "seat_number": 21,
+        "department_id": 3,
+        "employee_id": 21,
+        "floor_id": 9
+        
+    },
+    {
+        "seat_number": 22,
+        "department_id": 4,
+        "employee_id": 22,
+        "floor_id": 8
+        
+    },
+    {
+        "seat_number": 23,
+        "department_id": 5,
+        "employee_id": 23,
+        "floor_id": 11
+        
+    },
+    {
+        "seat_number": 24,
+        "department_id": 6,
+        "employee_id": 24,
+        "floor_id": 12
+        
+    },
+    {
+        "seat_number": 25,
+        "department_id": 7,
+        "employee_id": 25,
+        "floor_id": 13
+        
+    },
+    {
+        "seat_number": 26,
+        "department_id": 8,
+        "employee_id": 26,
+        "floor_id": 3
+        
+    },
+    {
+        "seat_number": 27,
+        "department_id": 9,
+        "employee_id": 27,
+        "floor_id": 4
+        
+    },
+    {
+        "seat_number": 28,
+        "department_id": 10,
+        "employee_id": 28,
+        "floor_id": 8
+        
+    },
+    {
+        "seat_number": 29,
+        "department_id":11,
+        "employee_id": 29,
+        "floor_id": 10
+        
+    },
+    {
+        "seat_number": 30,
+        "department_id": 4,
+        "employee_id": 30,
+        "floor_id": 10
+        
+    },
+    {
+        "seat_number": 31,
+        "department_id": 8,
+        "employee_id": 31,
+        "floor_id": 2
+        
     }
  ]

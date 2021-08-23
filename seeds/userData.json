@@ -3,18 +3,21 @@
     "first_name": "Admin",
     "last_name": "Dreadful",
     "email": "admin@contoso.com",
-    "password": "admin"
+    "phone_number": "555-555-5555",
+    "password": "admin123"
   },
   {
     "first_name": "Backup",
     "last_name": "Generator",
     "email": "admbkup@contoso.com",
-    "password": "backup"
+    "phone_number": "555-555-5555",
+    "password": "backup123"
   },
   {
     "first_name": "God",
     "last_name": "Mode",
     "email": "gm@contoso.com",
-    "password": "1234"
+    "phone_number": "555-555-5555",
+    "password": "12345678"
   }
 ]

@@ -3,50 +3,51 @@
         <h2>Edit Facility Manager</h2>
     </div>
     <div class="mx-auto shadow-lg rounded-3 mt-5">
-        <form class="form signup-form d-grid gap-3 p-5">
+        <form class="form edituser-form d-grid gap-3 p-5" user-id={{id}}>
             <div class="form-group d-flex justify-content-between">
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
-                    <label for="fname-signup">First Name:</label>
-                    <input class="form-input" type="text" id="fname-signup" />
+                    <label for="fname-useredit">First Name:</label>
+                    <textarea class="form-control" id="fname-useredit" rows="1" style="width: 70%;">{{first_name}}</textarea>
                 </div>
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
-                    <label for="lname-signup">Last Name:</label>
-                    <input class="form-input" type="text" id="lname-signup" />
+                    <label for="lname-useredit">Last Name:</label>
+                    <textarea class="form-control" id="lname-useredit" rows="1" style="width: 70%;">{{last_name}}</textarea>
                 </div>
             </div>
             <div class="form-group d-flex justify-content-between">
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
-                    <label for="email-signup">Email:</label>
-                    <input class="form-input" type="text" id="email-signup" />
+                    <label for="email-useredit">Email:</label>
+                    <textarea class="form-control" id="email-useredit" rows="1" style="width: 70%;">{{email}}</textarea>
                 </div>
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
-                    <label for="password-signup">Password:</label>
-                    <input class="form-input" type="password" id="password-signup" />
+                    <label for="pnumber-useredit">Phone:</label>
+                    <textarea class="form-control" id="pnumber-useredit" rows="1" style="width: 70%;">{{phone_number}}</textarea>
                 </div>
             </div>
             <div class="form-group d-flex justify-content-between">
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
+                    <label for="password-useredit">Password:</label>
+                    <textarea class="form-control" id="password-useredit" rows="1" style="width: 70%;"></textarea>
                 </div>
                 <div class="d-flex justify-content-between" style="width: 47.5%;">
+                    <label for="password-useredit">Retype PW:</label>
+                    <textarea class="form-control" id="retypePW-useredit" rows="1" style="width: 70%;"></textarea>
+                </div>
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <div class="d-flex justify-content-center" style="width: 47.5%;">
                     (Minimum 8 characters)
                 </div>
-            </div>
-                <div class="d-flex justify-content-between" style="width: 47.5%;">
-                    <label for="password-signup">Password:</label>
-                    <input class="form-input" type="password" id="password-signup" />
-                </div>
-            </div>
-            <div class="form-group d-flex justify-content-between">
-                <div class="d-flex justify-content-between" style="width: 47.5%;">
-                </div>
-                <div class="d-flex justify-content-between" style="width: 47.5%;">
+                <div class="d-flex justify-content-center" style="width: 47.5%;">
                     (Please re-enter your password)
                 </div>
             </div>
             <div class="form-group mt-3 mx-auto">
-                <button class="btn btn-primary" type="submit"><i class="bi bi-plus-lg"></i> Create</button>
+                <button class="btn btn-primary" type="submit"><i class="bi bi-pencil-square"></i> Update</button>
             </div>
         </form>
     </div>
 </div>
+</div>
+
 <script src="/js/userEdit.js"></script>

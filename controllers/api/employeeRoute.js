@@ -1,39 +1,28 @@
 const router = require('express').Router();
-const { Employee, Department, Floor, Space } = require('../../models');
+const { Employee } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-// GET
-// router.get('/', async (req, res) => {
-//     try {
-//         const employeeData = await Employee.findAll();
-//         console.log('\n DISPLAYING ALL EMPLOYEES \n');
-//         res.status(200).json(employeeData);
-//     }
-//     catch (err) {
-//         res.status(500).json(err);
-//         if (err) {
-//             console.error(err);
-//         }
-//     }
-// });
-
-// POST
-router.post('/', async (req, res) => {
+// UPDATE EMPLOYEE 
+router.put("/:id", withAuth, async (req, res) => {
     try {
-        const EmployeeNew = await Employee.create(req.body);
-        console.log(`\n EMPLOYEE ${req.body.first_name} ${req.body.last_name} ADDED \n`);
-        res.status(200).json(EmployeeNew);
-    }
-    catch (err) {
-        res.status(400).json(err);
-        if (err) {
-            console.error(err);
+        const employeeData = await Employee.update(req.body, {
+            where: {
+                id: req.params.id,
+            }
+        })
+  
+        if (!employeeData) {
+            res.status(404).json({ message: "No employee found with this ID."});
+            return;
         }
+  
+        res.status(200).json(employeeData);
+    } catch (err) {
+        res.status(500).json(err);
     }
-});
+  })
 
-// DELETE
+// DELETE (TBD)
 router.delete('/:id', async (req, res) => {
     try {
         const deletedEmployee = await Employee.destroy({
@@ -41,7 +30,7 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        console.log(`\n EMPLOYEE ID: ${req.params.id} HAS BEEN DELETED \n`);
+        //console.log(`\n EMPLOYEE ID: ${req.params.id} HAS BEEN DELETED \n`);
         res.status(200).json(deletedEmployee);
     }
     catch (err) {
