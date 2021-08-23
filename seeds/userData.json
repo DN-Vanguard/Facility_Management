@@ -1,16 +1,19 @@
 [
   {
-    "name": "Admin",
+    "first_name": "Admin",
+    "last_name": "Dreadful",
     "email": "admin@contoso.com",
     "password": "admin"
   },
   {
-    "name": "Backup",
+    "first_name": "Backup",
+    "last_name": "Generator",
     "email": "admbkup@contoso.com",
     "password": "backup"
   },
   {
-    "name": "God",
+    "first_name": "God",
+    "last_name": "Mode",
     "email": "gm@contoso.com",
     "password": "1234"
   }

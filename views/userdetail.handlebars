@@ -1,0 +1,25 @@
+<div class=" w-50 mx-auto">
+    <div>
+        <h2>Facility Manager Detail</h2>
+    </div>
+
+    <div class="my-5 d-grid gap-3 shadow-lg rounded-3 p-5">
+        {{#if renderEdit}}
+        <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-between" style="width: 35%;">
+                <a class="btn btn-primary px-4" href="/user-editor/{{id}}"><i class="bi bi-pencil-square"></i> Edit</a>
+                <button class="btn btn-danger" id="delBtn"><i class="bi bi-trash"></i> Delete</button>
+            </div>
+        </div>
+        {{/if}}
+        <div class="text-start h3 text-primary text-center">{{first_name}} {{last_name}}</div>
+        <div class="d-flex justify-content-between">
+            <div class="text-start h3" style="width: 45%;">Facility Manager ID</div>
+            <div class="text-center" style="width: 45%; font-size: x-large;">{{id}}</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="text-start h3" style="width: 45%;">Email</div>
+            <div class="text-center" style="width: 45%; font-size: x-large;">{{email}}</div>
+        </div>
+    </div>
+</div>

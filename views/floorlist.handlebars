@@ -1,0 +1,13 @@
+<div class="w-50 mx-auto">
+    <div>
+        <h2>Floors</h2>
+    </div>
+    <div class="d-flex flex-column my-5 d-grid gap-2">
+        {{#each floors as |floor|}}
+            <a class="btn btn-outline-primary btn-lg d-flex justify-content-around" href="/floor-detail/{{floor.id}}">
+                <div class="h3 text-end m-0">Floor {{floor.floor_level}}</div>
+                <div class="h3 text-end m-0" style="width: 35%;"> Building {{floor.building.building_name}}</div>
+            </a>
+        {{/each}}
+    </div>
+</div>

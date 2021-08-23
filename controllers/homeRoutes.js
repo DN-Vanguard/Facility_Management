@@ -75,7 +75,6 @@ router.get('/employee-detail/:id', withAuth, async (req, res) => {
     const building = buildingData.get({ plain: true });
 
     // DEBUG: To see what is in [employees].
-    console.log(building);
     console.log({
       ...employeeDetail,
       ...building,
@@ -121,12 +120,12 @@ router.get('/departments', withAuth, async (req, res) => {
 router.get('/department-detail/:id', withAuth, async (req, res) => {
   try {
     const departmentData = await Department.findByPk(req.params.id);
-    const employeeData = await Employee.findAll({ where: {department_id: req.params.id}});
+    const employeeData = await Employee.findAll({ where: { department_id: req.params.id } });
 
-    const department = departmentData.get({ plain: true});
+    const department = departmentData.get({ plain: true });
     const employees = employeeData.map((emp) => emp.get({ plain: true }));
 
-    // DEBUG: To see what is in [employees].
+    // DEBUG: To see what is in [renderdata].
     console.log({
       department,
       employees,
@@ -148,15 +147,152 @@ router.get('/department-detail/:id', withAuth, async (req, res) => {
   }
 });
 
-// SIGNUP ROUTE
-router.get('/signup', async (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
+// Home route for Floor List.
+router.get('/floors', withAuth, async (req, res) => {
+  try {
+    const floorData = await Floor.findAll({
+      include: [
+        {
+          model: Building,
+          attributes: ['building_name'],
+        },
+      ]
+    });
 
-  res.render('signup');
-})
+    const floors = floorData.map((flr) => flr.get({ plain: true }));
+
+    // DEBUG: To see what is in [renderdata].
+    console.log({
+      floors,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+
+    res.render('floorlist', {
+      floors,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Home route for Floor Detail
+router.get('/floor-detail/:id', withAuth, async (req, res) => {
+  try {
+    const floorData = await Floor.findByPk(req.params.id, {
+      attributes: { exclude: ['building_id'] },
+      include: [{
+        model: Building,
+        attributes: ['building_name'],
+      }]
+    });
+
+    const spaceDetailData = await Space.findAll({
+      where: { floor_id: req.params.id }, include: [{
+        model: Employee
+      }, {
+        model: Department
+      }, {
+        model: Floor
+      }],
+    })
+
+    const floor = floorData.get({ plain: true });
+    const spaceDetail = spaceDetailData.map((spc) => spc.get({ plain: true }));
+
+    // DEBUG: To see what is in [renderdata].
+    console.log({
+      spaceDetail,
+      floor,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+
+    res.render('floordetail', {
+      spaceDetail,
+      floor,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    if (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  }
+});
+
+// Home route to User List.
+router.get('/users', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+    });
+
+    const users = userData.map((user) => user.get({ plain: true }));
+
+    // DEBUG: To see what is in [User].
+    console.log(users);
+
+    res.render('userlist', {
+      users,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Home route to User Sign-Up. (Create New Facility Manager)
+router.get('/add-user', withAuth, async (req, res) => {
+  try {
+    res.render('signup', {
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// User details
+router.get('/user-detail/:id', withAuth, async (req, res) => {
+  try {
+    const userDetailData = await User.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const userDetail = userDetailData.get({ plain: true });
+
+    var isSameUser = false;
+    if (req.params.id == req.session.user_id) {
+      isSameUser = true;
+    };
+
+    // DEBUG: To see what is in [user].
+    console.log({
+      ...userDetail,
+      renderEdit: isSameUser,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+
+    res.render('userdetail', {
+      ...userDetail,
+      renderEdit: isSameUser,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name
+    });
+  } catch (err) {
+    if (err) {
+      console.error(err);
+      res.status(500).json(err);
+    }
+  }
+});
 
 // LOGIN ROUTE
 router.get('/login', async (req, res) => {
