@@ -54,14 +54,14 @@ SO THAT I can accurately assess employees, departments, office space, and floor 
 ## <u>Acceptance Criteria</u>
 ```md
 GIVEN I am registered facility user 
-WHEN I hit an edit button 
-THEN my facility manager id and email can be edited.
-WHEN I hit the delete button 
-THEN my facility manager id and email can be deleted.
 WHEN I Login as a user 
 THEN I can be loged back in as a former user.
 WHEN I add my first name, last name, email and password
 THEN a new account is opened with a page where my name is diplayed with a welcome. 
+WHEN I hit an edit button 
+THEN my facility manager id and email can be edited.
+WHEN I hit the delete button 
+THEN my facility manager id and email can be deleted.
 WHEN I use my nav bar to display list of employees 
 THEN a list of employees and their department is diplayed. 
 WHEN I use my nav bar to display list of departments  
@@ -72,7 +72,6 @@ THEN a list of seat number, employee id and floor id is diplayed.
 ```
 
 ## <u>Wireframe</u>
-![UX Design of Layout]()
 ![Laptop View]()
 ![Tablet View]()
 
