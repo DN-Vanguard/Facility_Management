@@ -23,8 +23,9 @@
             <div class="d-flex justify-content-between align-items-center" style="width: 88%;">
                 <a class="navbar-brand h1 me-5 p-0" href="/" style="font-size: xx-large;">Facility Management</a>
                 {{#if logged_in}}
-                <div class="mx-2">
-                    <h5>Welcome {{user_name}}</h5>
+                <div class="mx-2 d-flex flex-column align-items-end">
+                    <h7>Welcome {{user_name}}</h7>
+                    <h7>{{dateFormat current_date 'll'}}</h7>
                 </div>
                 {{/if}}
             </div>
