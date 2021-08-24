@@ -312,7 +312,7 @@ router.get('/user-detail/:id', withAuth, async (req, res) => {
     const userDetail = userDetailData.get({ plain: true });
 
     var isSameUser = false;
-    if (req.params.id == req.session.user_id) {
+    if (req.params.id == req.session.user_id && req.session.user_name !== "Test") {
       isSameUser = true;
     };
 
