@@ -4,7 +4,10 @@
 As companies evolve and grow, so does their team and office space. 
 During a businesses "transition period", our application allows facility management and company logistics to view their employees in different departments, floors, and office space, and see which area needs to be filled.
 
-(**DISCLAIMER:** Our app was made for the purpose of users already being created from the backend server)
+(**DISCLAIMER:** Our app was made for the purpose of users already being created from the backend server) To test the application, use:
+- Email: test@test.org
+- Password: testtest
+
 [Click here to check out our app!](https://dn-fac-mgmt.herokuapp.com/login)
 
 **AUDIENCE**:
