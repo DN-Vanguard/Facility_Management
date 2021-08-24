@@ -4,7 +4,8 @@
 As companies evolve and grow, so does their team and office space. 
 During a businesses "transition period", our application allows facility management and company logistics to view their employees in different departments, floors, and office space, and see which area needs to be filled.
 
-[Click here to check out our app!]()
+(**DISCLAIMER:** Our app was made for the purpose of users already being created from the backend server)
+[Click here to check out our app!](https://dn-fac-mgmt.herokuapp.com/login)
 
 **AUDIENCE**:
 Facility Managers
@@ -30,8 +31,8 @@ An application that allows managers to visually comprehend where their employees
 * Adding employees, departments, and buildings/floors directly through interface
 * Change employee's placement of seat number, department and building/floor directly through interface
 * Employees being in multiple deparments
-* Real time facility management.
-    - Example: 7/50 cubicles on Floor 3 in Building A available
+* Real time facility management
+    - Example: 7/50 cubicles on Floor 3 in Building A is available
 
 ## <u>Installation Guide</u>
 1. Download `Node.js` on your local machine.
@@ -64,7 +65,9 @@ GIVEN I am registered facility manager,
 WHEN I login through the user interface,
 THEN I am directed to a homepage where I see: EMPLOYEES, DEPARTMENTS, AND FLOORS.
 WHEN I click the side menu navigation bar,
-THEN I am presented with the following options: EMPLOYEES, DEPARTMENTS, FLOORS, USER MANAGEMENT, AND LOGOUT.
+THEN I am presented with the following options: HOME, EMPLOYEES, DEPARTMENTS, FLOORS, USER MANAGEMENT, AND LOGOUT.
+WHEN I click on the HOME option in the nav bar,
+THEN I am sent back to the homepage.
 WHEN I click EMPLOYEES from the homepage or the nav bar,
 THEN I am presented with a list of all EMPLOYEES and their corresponding DEPARTMENTS. 
 WHEN I click one of the EMPLOYEES from the EMPLOYEE list,
@@ -73,24 +76,40 @@ WHEN I click DEPARTMENTS from the homepage or nav bar,
 THEN I am presented with a list of DEPARTMENTS. 
 WHEN I click one of the DEPARTMENTS in the DEPARTMENTS list,
 THEN I am presented with the list of EMPLOYEES with their corresponding EMPLOYEE ID.
-WHEN I click and am able to click that employees name, department name, employee ID, phone number, email seat number, floor number, and building.
-WHEN I click floors from the homepage or nav bar
-THEN I am presented with the list of floors and their corresponding building code and I am able to the employees and the corresponding departments they work in when I click each employee and from here I can click the employee details. 
-WHEN I click the user managment from the nav bar 
-THEN I am presented with list of facility managers and with the option to add new facility manager. 
-WHEN I click the facility manager 
-THEN I am presented with managers name, facility ID number, email, and phone number and with the ablity to edit or delete the managers details. 
-When I want to create new facilty manager
-THEN I am presented with a form requesting my first and last name, email, phone number and password with a minimum of 8 characters and I am able to click the new facility manager in the facility manager user list as well as log back in as a new facility manager user.
-WHEN I delete a facility manager 
-THEN I am able to remove that user from the list of user managment list. 
-When I edit the facility managers detail 
-Then I am presented with a form to edit facility managers first and last name, email, phone number, password 8 characters long, and retype password for verefication. 
+WHEN I click an EMPLOYEE from the DEPARTMENT list,
+THEN I am able to view the EMPLOYEES: first and last name, department name, employee ID, phone number, email, seat number, floor number, and building.
+WHEN I click the EDIT button in the upper right corner,
+THEN I am able to EDIT the EMPLOYEE'S: first and last name, phone number, and email.
+WHEN I click UPDATE at the bottom
+THEN the EMPLOYEE'S information will be updated.
+WHEN I click FLOORS from the homepage or nav bar,
+THEN I am presented with the list of FLOORS and their corresponding BUIlDING name.
+WHEN I click on a BUILDING with it's corresponding FLOOR number,
+THEN and I am presented with the EMPLOYEES and their corresponding DEPARTMENTS on that FLOOR BUILDING.
+WHEN I click an EMPLOYEE from the list,
+THEN I am able to view the EMPLOYEES: first and last name, department name, employee ID, phone number, email, seat number, floor number, and building.
+WHEN I click USER MANAGEMENT from the nav bar,
+THEN I am presented with list of facility managers and with the option to CREATE NEW FACILITY MANAGER.
+WHEN I click the CREATE NEW FACILITY MANAGER button,
+THEN I am redirected to a new page consisting of the user typing in their: first and last name, email, phone number, and password (minimum of 8 characters).
+WHEN the user enters their first and last name, email, phone number, and password (minimum of 8 characters),
+THEN the user will click a create button at the bottom of the page and a new user will be created to log in later.
+WHEN I click on a facility manager,
+THEN I am presented with the managers: first and last name, facility manager ID, email, and phone number. (If I am the current user, I have the ability to edit my manager details and/or delete my account via and EDIT and DELETE button)
+WHEN I click the EDIT button, 
+THEN I am presented with a inputs to EDIT my: first and last name, email, phone number, a password (minimum 8 characters), and to retype my password for verification purposes.
+WHEN I click the DELETE button,
+THEN I am able to DELETE my account from the application, and will be logged out.
+WHEN I click LOGOUT,
+THEN I am logged out.
 ```
 
-## <u>Wireframe</u>
-![Laptop View]()
-![Tablet View]()
+## <u>Wireframe and Images</u>
+<img src="images/UX-Design.png" width="600" height="600" alt="UX Design"/>
+<img src="images/Relationship.jpg" width="600" height="600" alt="Relationship Model"/>
+<img src="images/Laptop_View.png" width="980" height="600" alt="Laptop View"/>
+<img src="images/Tablet_View.png" width="600" height="600" alt="Tablet View"/>
+
 
 ## <u>Technologie Used</u>
 * Handlebars
@@ -100,3 +119,5 @@ Then I am presented with a form to edit facility managers first and last name, e
 * MySQL
 * Insomia Core
 * Heroku
+* Bootstrap
+* Sequelize
