@@ -2,9 +2,11 @@
     <div>
         <h2>Facility Managers</h2>
     </div>
+    {{#if renderCreate}}
     <div class="d-flex justify-content-end">
         <a class="btn btn-primary" href="/add-user"><i class="bi bi-plus-lg"></i> Create New Facility Manager</a>
     </div>
+    {{/if}}
     <div class="d-flex flex-column my-5 d-grid gap-2">
         {{#each users as |user|}}
         <a class="btn btn-outline-primary btn-lg d-flex justify-content-center" href="/user-detail/{{user.id}}">

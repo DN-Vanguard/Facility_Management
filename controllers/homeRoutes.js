@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Building, Department, Employee, Floor, Space } = require('../models');
 const withAuth = require('../utils/auth');
+const moment = require('moment');
 
 //HOMEPAGE
 // Use withAuth middleware to prevent access to route
@@ -15,7 +16,8 @@ router.get('/', withAuth, async (req, res) => {
 
     res.render('homepage', {
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     res.status(500).json(err);
@@ -42,7 +44,8 @@ router.get('/employees', withAuth, async (req, res) => {
     res.render('employeelist', {
       employees,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -74,19 +77,26 @@ router.get('/employee-detail/:id', withAuth, async (req, res) => {
 
     const building = buildingData.get({ plain: true });
 
+    var isNotTestUser = false;
+    if (req.session.user_name !== "Test") {
+      isNotTestUser = true;
+    };
+
     // DEBUG: To see what is in [employees].
-    console.log({
-      ...employeeDetail,
-      ...building,
-      logged_in: req.session.logged_in,
-      user_name: req.session.user_name
-    });
+    // console.log({
+    //   ...employeeDetail,
+    //   ...building,
+    //   logged_in: req.session.logged_in,
+    //   user_name: req.session.user_name
+    // });
 
     res.render('employeedetail', {
       ...employeeDetail,
       ...building,
+      renderEdit: isNotTestUser,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -130,7 +140,8 @@ router.get('/employee-editor/:id', withAuth, async (req, res) => {
       ...employeeDetail,
       ...building,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -153,7 +164,8 @@ router.get('/departments', withAuth, async (req, res) => {
     res.render('departmentlist', {
       departments,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     res.status(500).json(err);
@@ -181,7 +193,8 @@ router.get('/department-detail/:id', withAuth, async (req, res) => {
       department,
       employees,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -215,7 +228,8 @@ router.get('/floors', withAuth, async (req, res) => {
     res.render('floorlist', {
       floors,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     res.status(500).json(err);
@@ -258,7 +272,8 @@ router.get('/floor-detail/:id', withAuth, async (req, res) => {
       spaceDetail,
       floor,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -277,13 +292,20 @@ router.get('/users', withAuth, async (req, res) => {
 
     const users = userData.map((user) => user.get({ plain: true }));
 
+    var isNotTestUser = false;
+    if (req.session.user_name !== "Test") {
+      isNotTestUser = true;
+    };
+
     // DEBUG: To see what is in [User].
     // console.log(users);
 
     res.render('userlist', {
       users,
+      renderCreate: isNotTestUser,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     res.status(500).json(err);
@@ -295,7 +317,8 @@ router.get('/add-user', withAuth, async (req, res) => {
   try {
     res.render('signup', {
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     res.status(500).json(err);
@@ -328,7 +351,8 @@ router.get('/user-detail/:id', withAuth, async (req, res) => {
       ...userDetail,
       renderEdit: isSameUser,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {
@@ -357,7 +381,8 @@ router.get('/user-editor/:id', withAuth, async (req, res) => {
     res.render('userdetailedit', {
       ...userDetail,
       logged_in: req.session.logged_in,
-      user_name: req.session.user_name
+      user_name: req.session.user_name,
+      current_date: moment()
     });
   } catch (err) {
     if (err) {

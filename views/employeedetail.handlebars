@@ -3,11 +3,14 @@
         <h2>Employee Details</h2>
     </div>
 
+    {{#if renderEdit}}
     <div class="d-flex justify-content-end">
         <div class="d-flex justify-content-end" style="width: 30%;">
             <a class="btn btn-primary px-4" href="/employee-editor/{{employee.id}}"><i class="bi bi-pencil-square"></i> Edit</a>
         </div>
     </div>
+    {{/if}}
+
     <div class="my-5 d-grid gap-3 shadow-lg rounded-3 p-5">
         <div class="d-flex justify-content-between">
             <div class="text-center h3 text-primary" style="width: 45%;">{{employee.first_name}} {{employee.last_name}}
