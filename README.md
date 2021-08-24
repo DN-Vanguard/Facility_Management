@@ -121,3 +121,5 @@ THEN I am logged out.
 * Heroku
 * Bootstrap
 * Sequelize
+* Moment
+* [Handlebars-dateformat](https://www.npmjs.com/package/handlebars-dateformat) (3rd Party Library)
